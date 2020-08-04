@@ -9,7 +9,9 @@ const NotebookItem = ({ notebook }) => {
 
     return (
         <div>
-            <p>{notebook.name}</p>
+            <Link to={`/${notebook.id}`}>
+                <p>{notebook.name}</p>
+            </Link>
         </div>
     );
 };
