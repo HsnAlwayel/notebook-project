@@ -20,19 +20,21 @@ import AddButton from "../Buttons/AddButton";
 
 const NotebookDetail = () => {
   const { notebookSlug } = useParams();
+
   const notebook = notebookStore.notebooks.find(
     (notebook) => notebook.slug === notebookSlug
   );
 
-
-  const notes = notebook.notes.map((note) =>
-    noteStore.getItemById(note.id)).filter((note) => note);
-
   if (!notebook) return <Redirect to="/" />;
+
+  let notes = notebook.notes
+    .map((note) => noteStore.getItemById(note.id))
+    .filter((note) => note);
 
   return (
     <NotebookDetailWrapper>
       <NotebookName>Name: {notebook.name}</NotebookName>
+
       <NoteList notes={notes} />
       <AddButton notebook={notebook} />
       <GoBackButtonLink to="/">

@@ -25,7 +25,7 @@ const customStyles = {
   },
 };
 
-const NotebookModal = ({ isOpen, closeModal, oldNotebook, vendor }) => {
+const NotebookModal = ({ isOpen, closeModal, oldNotebook }) => {
   const [notebook, setNotebook] = useState(
     oldNotebook ?? {
       name: "",
@@ -38,10 +38,7 @@ const NotebookModal = ({ isOpen, closeModal, oldNotebook, vendor }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    notebookStore[oldNotebook ? "updateNotebook" : "createNotebook"](
-      notebook,
-      vendor
-    );
+    notebookStore[oldNotebook ? "updateNotebook" : "createNotebook"](notebook);
     closeModal();
   };
 
@@ -77,7 +74,7 @@ const NotebookModal = ({ isOpen, closeModal, oldNotebook, vendor }) => {
               </div>
             </div>
             <CreateButtonStyled type="submit" className="btn btn-primary">
-              Create
+              {oldNotebook ? "Update" : "Create"}
             </CreateButtonStyled>
           </form>
         </div>

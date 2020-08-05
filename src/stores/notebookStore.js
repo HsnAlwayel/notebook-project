@@ -26,6 +26,32 @@ class NotebookStore {
       console.log(error);
     }
   };
+
+  updateNotebook = async (updatedNotebook) => {
+    try {
+      await axios.put(
+        `http://localhost:8000/notebooks/${updatedNotebook.id}`,
+        updatedNotebook
+      );
+      const notebook = this.notebooks.find(
+        (notebook) => notebook.id === updatedNotebook.id
+      );
+      for (const key in notebook) notebook[key] = updatedNotebook[key];
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  deleteNotebook = async (notebookId) => {
+    try {
+      await axios.delete(`http://localhost:8000/notebooks/${notebookId}`);
+      this.notebooks = this.notebooks.filter(
+        (_notebook) => _notebook.id !== notebookId
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 }
 
 decorate(NotebookStore, {

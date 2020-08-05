@@ -1,29 +1,37 @@
 import React, { useState } from "react";
 
-//Components
-import NoteModal from "../../modals/NoteModal"
-import NotebookModal from "../../modals/NotebookModal"
-
 // Styling
-import { UpdateButtonStyled } from "../../styles";
+import { UpdateButtonStyled } from "./styles";
 
-const UpdateButton = ({ note, notebook }) => {
-    const [isOpen, setIsOpen] = useState(false);
+//Icon
+import { FiEdit2 } from "react-icons/fi";
 
-    const closeModal = () => setIsOpen(false);
-    const openModal = () => setIsOpen(true);
+// Components
+import NoteModal from "../modals/NoteModal";
+import NotebookModal from "../modals";
 
-    return (
-        <>
-            <UpdateButtonStyled onClick={openModal}>Update</UpdateButtonStyled>;
-            {notebook ? (
-                <NotebookModal isOpen={isOpen} closeModal={closeModal} oldNotebook={notebook} />
-            ) : (
-                    <NoteModal isOpen={isOpen} closeModal={closeModal} oldNote={note} />
-                )
-            }
-        </>
-    )
+const UpdateButton = ({ oldNote, notebook }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeModal = () => setIsOpen(false);
+
+  const openModal = () => setIsOpen(true);
+  return (
+    <>
+      <UpdateButtonStyled onClick={openModal}>
+        Edit <FiEdit2 />
+      </UpdateButtonStyled>
+      {notebook ? (
+        <NotebookModal
+          isOpen={isOpen}
+          closeModal={closeModal}
+          oldNotebook={notebook}
+        />
+      ) : (
+        <NoteModal oldNote={oldNote} closeModal={closeModal} isOpen={isOpen} />
+      )}
+    </>
+  );
 };
 
 export default UpdateButton;
