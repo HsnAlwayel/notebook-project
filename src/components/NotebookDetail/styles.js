@@ -10,27 +10,18 @@ export const NotebookDetailWrapper = styled.div`
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 70%;
-  height: 400px;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10vh;
 `;
 
 export const NotebookName = styled.h1`
+  text-align: center;
   margin-top: 30px;
   font-size: 3.5em;
-  color: black;
-`;
-
-export const NotebookTitle = styled.h3`
-  font-size: 2.5em;
   color: black;
 `;
 
@@ -46,8 +37,14 @@ export const GoBackButton = styled.p`
 
 export const GoBackButtonLink = styled(Link)`
   text-direction: none;
+  padding-bottom: 30px;
 
   :hover {
     text-decoration: none;
   }
+`;
+
+export const AddButtonWrapper = styled.span`
+  font-size: 0.3em;
+  margin-left: 20px;
 `;

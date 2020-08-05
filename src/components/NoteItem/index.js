@@ -1,21 +1,22 @@
 //React
 import React from "react";
-import { Link } from "react-router-dom";
+
+//Buttons
 import UpdateButton from "../Buttons/UpdateButton";
 import DeleteButton from "../Buttons/DeleteButton";
 
 //Styles
-// import { ItemWrapper } from "./styles";
+import { NoteItemWrapper, NoteTitleLink } from "./styles";
 
 const NoteItem = ({ note }) => {
   return (
-    <div>
-      <Link to={`/notes/${note.slug}`}>
+    <NoteItemWrapper>
+      <NoteTitleLink to={`/notes/${note.slug}`}>
         <p>{note.title}</p>
-      </Link>
+      </NoteTitleLink>
       <UpdateButton oldNote={note} />
       <DeleteButton noteId={note.id} />
-    </div>
+    </NoteItemWrapper>
   );
 };
 

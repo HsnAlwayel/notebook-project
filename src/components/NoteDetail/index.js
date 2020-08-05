@@ -4,7 +4,13 @@ import { useParams, useHistory, Redirect } from "react-router-dom";
 import { observer } from "mobx-react";
 
 // Styles
-// import { NoteDetailWrapper, ChangeViewButton } from "./styles";
+import {
+  GoBackButton,
+  GoBackButtonLink,
+  NoteBodyWrapper,
+  NoteTitleWrapper,
+  NoteDetailWrapper,
+} from "./styles";
 
 //Stores
 import noteStore from "../../stores/noteStore";
@@ -23,11 +29,13 @@ const NoteDetail = () => {
 
   return (
     <>
-      <div>
-        <h1>{note.title}</h1>
-        <p>{note.body}</p>
-        <button onClick={goBack}>Back</button>
-      </div>
+      <NoteDetailWrapper>
+        <NoteTitleWrapper>{note.title}</NoteTitleWrapper>
+        <NoteBodyWrapper>{note.body}</NoteBodyWrapper>
+        <GoBackButtonLink>
+          <GoBackButton onClick={goBack}>Back to Notebook</GoBackButton>
+        </GoBackButtonLink>
+      </NoteDetailWrapper>
     </>
   );
 };

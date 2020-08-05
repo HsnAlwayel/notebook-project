@@ -18,9 +18,9 @@ function App() {
   return (
     <>
       <GlobalStyle />
+
       {noteStore.loading || notebookStore.loading ? <Loading /> : <Routes />}
     </>
-
   );
 }
 

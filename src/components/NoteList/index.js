@@ -6,7 +6,7 @@ import { observer } from "mobx-react";
 import NoteItem from "../NoteItem";
 
 //Styles
-// import { ListWrapper } from "./styles";
+import { NoteListWrapper } from "./styles";
 
 const NoteList = ({ notes }) => {
   const filteredNote = notes.filter((note) => note.title);
@@ -17,7 +17,7 @@ const NoteList = ({ notes }) => {
 
   return (
     <>
-      <div>{noteList}</div>
+      <NoteListWrapper>{noteList}</NoteListWrapper>
     </>
   );
 };

@@ -30,8 +30,8 @@ export const NotesWrapper = styled.div`
 export const AddButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 200px;
-  height: 200px;
+  width: 20vw;
+  height: 60vh;
   text-align: center;
   margin-top: 4vh;
   margin-left: 2vw;

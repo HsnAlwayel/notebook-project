@@ -50,6 +50,7 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
           <div className="col-6">
             <label>Title</label>
             <input
+              required
               type="text"
               name="title"
               className="form-control"
@@ -61,6 +62,7 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
         <div className="form-group">
           <label>Body</label>
           <input
+            required
             type="text"
             name="body"
             className="form-control"

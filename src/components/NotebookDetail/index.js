@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams, Redirect } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { observer } from "mobx-react";
 
 //Stores
@@ -15,6 +15,7 @@ import {
   NotebookName,
   GoBackButton,
   GoBackButtonLink,
+  AddButtonWrapper,
 } from "./styles";
 import AddButton from "../Buttons/AddButton";
 
@@ -33,10 +34,14 @@ const NotebookDetail = () => {
 
   return (
     <NotebookDetailWrapper>
-      <NotebookName>Name: {notebook.name}</NotebookName>
-
+      <NotebookName>
+        Notebook: {notebook.name}
+        <AddButtonWrapper>
+          <AddButton notebook={notebook} />
+        </AddButtonWrapper>
+      </NotebookName>
       <NoteList notes={notes} />
-      <AddButton notebook={notebook} />
+
       <GoBackButtonLink to="/">
         <GoBackButton>Back to notebooks</GoBackButton>
       </GoBackButtonLink>

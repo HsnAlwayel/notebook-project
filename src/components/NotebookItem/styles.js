@@ -15,26 +15,27 @@ export const SingleNoteWrapper = styled.div`
   margin-bottom: 4vh;
   background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 200px;
+  width: 20vw;
 
   :hover {
-    width: 205px;
+    width: 21vw;
     transition: ease-in-out 0.2s;
   }
 
   p {
-    font-size: 2em;
+    font-size: 3rem;
     font-family: "Shadows Into Light", cursive;
     letter-spacing: 3px;
   }
 `;
 
 export const NoteImage = styled.img`
-  height: 130px;
-  width: 130px;
+  height: 13vw;
+  width: 13vw;
   margin-bottom: 10px;
   margin-right: auto;
   margin-left: auto;
+  object-fit: contain;
 `;
 
 export const LinkForTheNotes = styled(Link)`

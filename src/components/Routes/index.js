@@ -6,7 +6,6 @@ import NotebookList from "../NotebookList";
 import NotebookDetail from "../NotebookDetail";
 import NoteDetail from "../NoteDetail";
 import NoteList from "../NoteList";
-import noteStore from "../../stores/noteStore";
 
 const Routes = () => {
   return (
