@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 
+//Icon
+import { GrClose } from "react-icons/gr";
+
 // Stores
 import notesStore from "../../stores/noteStore";
 
@@ -44,7 +47,9 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
       style={customStyles}
       contentLabel="Example Modal"
     >
-      <h3>New Note</h3>
+      <GrClose style={{ marginBottom: "2vh" }} size="2vw" onClick={closeModal}>
+        close
+      </GrClose>
       <form onSubmit={handleSubmit}>
         <div className="form-group row">
           <div className="col-6">
