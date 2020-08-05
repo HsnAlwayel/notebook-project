@@ -1,20 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import NotebookList from "./components/NotebookList"
-import { Switch, Route } from 'react-router-dom';
-import NotebookDetail from './components/NotebookDetail';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+
+//Components
+import NotebookList from "./components/NotebookList";
+import NotebookDetail from "./components/NotebookDetail";
+
+//Styles
+import { GlobalStyle } from "./styles";
+
+//Styles
 
 function App() {
   return (
-    <Switch>
-      <Route path="/:notebookId">
-        <NotebookDetail />
-      </Route>
-      <Route path="/">
-        <NotebookList />
-      </Route>
-    </Switch>
+    <>
+      <GlobalStyle />
+      <Switch>
+        <Route path="/:notebookId">
+          <NotebookDetail />
+        </Route>
+        <Route path="/">
+          <NotebookList />
+        </Route>
+      </Switch>
+    </>
   );
 }
 

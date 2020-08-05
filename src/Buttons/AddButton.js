@@ -17,7 +17,12 @@ const AddButton = ({ createNotebook }) => {
       <BsPlusCircle
         onClick={() => setIsOpen(true)}
         size="3em"
-        style={{ marginTop: "auto", marginBottom: "auto", marginLeft: "2vw" }}
+        style={{
+          marginTop: "auto",
+          marginBottom: "auto",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}
       />
 
       <NotebookModal

@@ -1,7 +1,7 @@
 //Styled components
 import styled from "styled-components";
 
-export const AddButtonStyled = styled.button`
+export const CreateButtonStyled = styled.button`
   margin-left: auto;
   margin-right: auto;
   text-align: center;

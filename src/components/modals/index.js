@@ -11,7 +11,7 @@ import notebookStore from "../../stores/notebookStore";
 import { GrClose } from "react-icons/gr";
 
 //Styles
-import { AddButtonStyled } from "./styles";
+import { CreateButtonStyled } from "./styles";
 
 const customStyles = {
   content: {
@@ -76,9 +76,9 @@ const NotebookModal = ({ isOpen, closeModal, oldNotebook, vendor }) => {
                 />
               </div>
             </div>
-            <AddButtonStyled type="submit" className="btn btn-primary">
+            <CreateButtonStyled type="submit" className="btn btn-primary">
               Create
-            </AddButtonStyled>
+            </CreateButtonStyled>
           </form>
         </div>
       </Modal>

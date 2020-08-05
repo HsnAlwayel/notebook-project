@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { observer } from "mobx-react";
-import { Link } from "react-router-dom";
+
+//Buttons
+import AddButton from "../../Buttons/AddButton";
 
 //Stores
 import notebookStore from "../../stores/notebookStore";
@@ -8,8 +10,8 @@ import notebookStore from "../../stores/notebookStore";
 //Components
 import NotebookItem from "../NotebookItem";
 
-//Buttons
-import AddButton from "../../Buttons/AddButton";
+//Styles
+import { NotesWrapper, AddButtonWrapper, Title, TitleWrapper } from "./styles";
 
 const NotebookList = () => {
   const [query, setQuery] = useState("");
@@ -19,11 +21,17 @@ const NotebookList = () => {
     )
     .map((notebook) => <NotebookItem notebook={notebook} key={notebook.id} />);
   return (
-    <div>
-      <AddButton />
-      <h1>List</h1>
-      {notebookList}
-    </div>
+    <>
+      <TitleWrapper>
+        <Title>Notebooks</Title>
+      </TitleWrapper>
+      <NotesWrapper>
+        {notebookList}
+        <AddButtonWrapper>
+          <AddButton />
+        </AddButtonWrapper>
+      </NotesWrapper>
+    </>
   );
 };
 

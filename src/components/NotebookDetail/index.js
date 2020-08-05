@@ -5,29 +5,33 @@ import { observer } from "mobx-react";
 //Stores
 import notebookStore from "../../stores/notebookStore";
 
-
+//Styles
+import {
+  NoteDetailWrapper,
+  NotebookName,
+  NotebookTitle,
+  GoBackButton,
+  GoBackButtonLink,
+} from "./styles";
 
 const NotebookDetail = () => {
-    const { notebookId } = useParams();
-    const notebook = notebookStore.notebooks.find((notebook) => notebook.id === +notebookId)
-    console.log(notebook.notes.title);
-    console.log(notebook.notes.body);
-    console.log(notebook.notes);
+  const { notebookId } = useParams();
+  const notebook = notebookStore.notebooks.find(
+    (notebook) => notebook.id === +notebookId
+  );
 
+  if (!notebook) return <Redirect to="/" />;
 
-    if (!notebook) return <Redirect to="/" />
-
-    return (
-        <div>
-            <Link to="/">
-                <p>Back to notebooks</p>
-            </Link>
-            <h1>{notebook.name}</h1>
-            <h3>{notebook.notes[0].title}</h3>
-            <p>{notebook.notes[0].body}</p>
-
-        </div>
-    );
+  return (
+    <NoteDetailWrapper>
+      <NotebookName>Name: {notebook.name}</NotebookName>
+      <NotebookTitle>{notebook.notes[0].title}</NotebookTitle>
+      <p>{notebook.notes[0].body}</p>
+      <GoBackButtonLink to="/">
+        <GoBackButton>Back to notebooks</GoBackButton>
+      </GoBackButtonLink>
+    </NoteDetailWrapper>
+  );
 };
 
 export default observer(NotebookDetail);
