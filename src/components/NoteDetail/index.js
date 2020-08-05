@@ -26,7 +26,6 @@ const NoteDetail = () => {
       <div>
         <h1>{note.title}</h1>
         <p>{note.body}</p>
-
         <button onClick={goBack}>Back</button>
       </div>
     </>

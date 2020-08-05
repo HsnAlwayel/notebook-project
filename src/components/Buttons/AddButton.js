@@ -5,9 +5,10 @@ import React, { useState } from "react";
 import { BsPlusCircle } from "react-icons/bs";
 
 //Modal
-import NotebookModal from "../components/modals";
+import NotebookModal from "../modals";
+import NoteModal from "../modals/NoteModal";
 
-const AddButton = ({ createNotebook }) => {
+const AddButton = ({ createNotebook, notebook }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => setIsOpen(false);
@@ -24,12 +25,17 @@ const AddButton = ({ createNotebook }) => {
           marginRight: "auto",
         }}
       />
+      {notebook ? (
+        <NoteModal isOpen={isOpen} closeModal={closeModal} notebook={notebook} />
+      ) : (
+          <NotebookModal
+            createNotebook={createNotebook}
+            isOpen={isOpen}
+            closeModal={closeModal}
+          />
+        )
+      }
 
-      <NotebookModal
-        createNotebook={createNotebook}
-        isOpen={isOpen}
-        closeModal={closeModal}
-      />
     </>
   );
 };

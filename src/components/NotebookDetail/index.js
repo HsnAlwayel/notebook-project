@@ -16,6 +16,7 @@ import {
   GoBackButton,
   GoBackButtonLink,
 } from "./styles";
+import AddButton from "../Buttons/AddButton";
 
 const NotebookDetail = () => {
   const { notebookSlug } = useParams();
@@ -23,12 +24,9 @@ const NotebookDetail = () => {
     (notebook) => notebook.slug === notebookSlug
   );
 
-  let notes = [];
-  if (notebook.notes) {
-    notebook.notes
-      .map((note) => noteStore.getItemById(note.id))
-      .filter((note) => note);
-  }
+
+  const notes = notebook.notes.map((note) =>
+    noteStore.getItemById(note.id)).filter((note) => note);
 
   if (!notebook) return <Redirect to="/" />;
 
@@ -36,6 +34,7 @@ const NotebookDetail = () => {
     <NotebookDetailWrapper>
       <NotebookName>Name: {notebook.name}</NotebookName>
       <NoteList notes={notes} />
+      <AddButton notebook={notebook} />
       <GoBackButtonLink to="/">
         <GoBackButton>Back to notebooks</GoBackButton>
       </GoBackButtonLink>

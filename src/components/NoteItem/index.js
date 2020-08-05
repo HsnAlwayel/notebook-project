@@ -11,7 +11,6 @@ const NoteItem = ({ note }) => {
       <Link to={`/notes/${note.slug}`}>
         <p>{note.title}</p>
       </Link>
-      <p>{note.body}</p>
     </div>
   );
 };

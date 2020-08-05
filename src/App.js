@@ -12,15 +12,15 @@ import noteStore from "./stores/noteStore";
 import notebookStore from "./stores/notebookStore";
 
 //Components
-import Loading from "./Loading";
+import Loading from "./components/Loading";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-
       {noteStore.loading || notebookStore.loading ? <Loading /> : <Routes />}
     </>
+
   );
 }
 
