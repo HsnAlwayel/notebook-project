@@ -7,7 +7,7 @@ import notebookStore from "../../stores/notebookStore";
 
 //Styles
 import {
-  NoteDetailWrapper,
+  NotebookDetailWrapper,
   NotebookName,
   NotebookTitle,
   GoBackButton,
@@ -23,14 +23,14 @@ const NotebookDetail = () => {
   if (!notebook) return <Redirect to="/" />;
 
   return (
-    <NoteDetailWrapper>
+    <NotebookDetailWrapper>
       <NotebookName>Name: {notebook.name}</NotebookName>
       <NotebookTitle>{notebook.notes[0].title}</NotebookTitle>
       <p>{notebook.notes[0].body}</p>
       <GoBackButtonLink to="/">
         <GoBackButton>Back to notebooks</GoBackButton>
       </GoBackButtonLink>
-    </NoteDetailWrapper>
+    </NotebookDetailWrapper>
   );
 };
 

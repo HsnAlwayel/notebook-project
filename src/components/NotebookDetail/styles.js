@@ -4,7 +4,7 @@ import styled from "styled-components";
 //React Dom
 import { Link } from "react-router-dom";
 
-export const NoteDetailWrapper = styled.div`
+export const NotebookDetailWrapper = styled.div`
   background-image: url("https://i.pinimg.com/564x/96/8d/52/968d52235f3b42758e8499c35ac730eb.jpg");
   background-position: top top;
   background-size: cover;
