@@ -14,11 +14,8 @@ import NotebookItem from "../NotebookItem";
 import { NotesWrapper, AddButtonWrapper, Title, TitleWrapper } from "./styles";
 
 const NotebookList = () => {
-  const [query, setQuery] = useState("");
   const notebookList = notebookStore.notebooks
-    .filter((notebook) =>
-      notebook.name.toLowerCase().includes(query.toLowerCase())
-    )
+    .filter((notebook) => notebook.name)
     .map((notebook) => <NotebookItem notebook={notebook} key={notebook.id} />);
   return (
     <>

@@ -1,29 +1,27 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { observer } from "mobx-react";
 
 //Components
-import NotebookList from "./components/NotebookList";
-import NotebookDetail from "./components/NotebookDetail";
+import Routes from "./components/Routes";
 
 //Styles
 import { GlobalStyle } from "./styles";
 
-//Styles
+//Stores
+import noteStore from "./stores/noteStore";
+import notebookStore from "./stores/notebookStore";
+
+//Components
+import Loading from "./Loading";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <Switch>
-        <Route path="/:notebookId">
-          <NotebookDetail />
-        </Route>
-        <Route path="/">
-          <NotebookList />
-        </Route>
-      </Switch>
+
+      {noteStore.loading || notebookStore.loading ? <Loading /> : <Routes />}
     </>
   );
 }
 
-export default App;
+export default observer(App);

@@ -6,7 +6,7 @@ import { SingleNoteWrapper, NoteImage, LinkForTheNotes } from "./styles";
 
 const NotebookItem = ({ notebook }) => {
   return (
-    <LinkForTheNotes to={`/${notebook.id}`}>
+    <LinkForTheNotes to={`/${notebook.slug}`}>
       <SingleNoteWrapper>
         <NoteImage
           src="https://poppin.imgix.net/products/2018/Medium-Spiral-Notebook_Storm-Velvet_PDP_02.jpg"
