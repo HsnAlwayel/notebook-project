@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NoteDetailWrapper = styled.div`
-  background: url("https://i.dlpng.com/static/png/434744_preview.png");
+  background: url("https://cdn5.vectorstock.com/i/1000x1000/42/34/yellow-lined-paper-vector-18474234.jpg");
   background-position: top top;
   background-size: cover;
   background-repeat: no-repeat;
