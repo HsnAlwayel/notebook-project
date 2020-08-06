@@ -1,5 +1,4 @@
 import React from "react";
-import { observer } from "mobx-react";
 
 //Styles
 import { SingleNoteWrapper, NoteImage, LinkForTheNotes } from "./styles";
@@ -26,4 +25,4 @@ const NotebookItem = ({ notebook }) => {
   );
 };
 
-export default observer(NotebookItem);
+export default NotebookItem;

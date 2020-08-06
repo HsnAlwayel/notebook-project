@@ -41,7 +41,6 @@ const NotebookDetail = () => {
         </AddButtonWrapper>
       </NotebookName>
       <NoteList notes={notes} />
-
       <GoBackButtonLink to="/">
         <GoBackButton>Back to notebooks</GoBackButton>
       </GoBackButtonLink>
