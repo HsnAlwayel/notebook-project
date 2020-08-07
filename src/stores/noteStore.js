@@ -26,7 +26,7 @@ class NoteStore {
         newNote
       );
       this.notes.push(res.data);
-      notebook.notes.push({ id: res.data.id });
+      notebook.notes.push(res.data);
     } catch (error) {
       console.log("Note ->create-> error", error);
     }

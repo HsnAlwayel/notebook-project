@@ -32,6 +32,8 @@ const NotebookDetail = () => {
     .map((note) => noteStore.getItemById(note.id))
     .filter((note) => note);
 
+  console.log(notes);
+
   return (
     <NotebookDetailWrapper>
       <NotebookName>

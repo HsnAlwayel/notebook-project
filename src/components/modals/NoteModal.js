@@ -28,6 +28,7 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
       : {
           title: "",
           body: "",
+          Tags: "",
         }
   );
 
@@ -74,6 +75,14 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
             onChange={handleChange}
             value={note.body}
           />
+        </div>
+        <div className="form-group">
+          <label>Tags</label>
+          <br />
+          <select className="form-control">
+            <option>anas</option>
+            <option>hassan</option>
+          </select>
         </div>
         <CreateButtonStyled type="submit" className="btn btn-primary">
           {oldNote ? "Update" : "Create"}

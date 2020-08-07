@@ -23,7 +23,7 @@ export const SingleNoteWrapper = styled.div`
   }
 
   p {
-    font-size: 3rem;
+    font-size: 4vw;
     font-family: "Shadows Into Light", cursive;
     letter-spacing: 3px;
   }

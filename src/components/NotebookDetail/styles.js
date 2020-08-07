@@ -8,7 +8,6 @@ export const NotebookDetailWrapper = styled.div`
   background-image: url("https://i.pinimg.com/564x/96/8d/52/968d52235f3b42758e8499c35ac730eb.jpg");
   background-position: top top;
   background-size: cover;
-  background-attachment: fixed;
   background-repeat: no-repeat;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

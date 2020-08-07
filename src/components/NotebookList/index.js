@@ -11,7 +11,13 @@ import notebookStore from "../../stores/notebookStore";
 import NotebookItem from "../NotebookItem";
 
 //Styles
-import { NotesWrapper, AddButtonWrapper, Title, TitleWrapper } from "./styles";
+import {
+  NotesWrapper,
+  AddButtonWrapper,
+  Title,
+  TitleWrapper,
+  NoteLink,
+} from "./styles";
 
 const NotebookList = () => {
   const notebookList = notebookStore.notebooks
@@ -20,7 +26,12 @@ const NotebookList = () => {
   return (
     <>
       <TitleWrapper>
-        <Title>Notebooks</Title>
+        <Title>
+          Notebooks
+          <NoteLink to="/notes">
+            <h3>notes</h3>
+          </NoteLink>
+        </Title>
       </TitleWrapper>
       <NotesWrapper>
         {notebookList}
