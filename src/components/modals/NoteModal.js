@@ -6,9 +6,11 @@ import { GrClose } from "react-icons/gr";
 
 // Stores
 import notesStore from "../../stores/noteStore";
+import tagStore from "../../stores/tagStore";
 
 //Styles
 import { CreateButtonStyled } from "./styles";
+import TagItem from "../TagItem";
 
 const customStyles = {
   content: {
@@ -28,7 +30,7 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
       : {
           title: "",
           body: "",
-          Tags: "",
+          tag: 0,
         }
   );
 
@@ -40,6 +42,10 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
     notesStore[oldNote ? "updateNote" : "createNote"](note, notebook);
     closeModal();
   };
+
+  const tagList = tagStore.tags.map((tag) => (
+    <TagItem show tag={tag} key={tag.id} />
+  ));
 
   return (
     <Modal
@@ -79,9 +85,16 @@ const NoteModal = ({ isOpen, closeModal, oldNote, notebook }) => {
         <div className="form-group">
           <label>Tags</label>
           <br />
-          <select className="form-control">
-            <option>anas</option>
-            <option>hassan</option>
+          <select
+            onChange={handleChange}
+            name="tag"
+            className="form-control"
+            required
+          >
+            <option disabled selected value="">
+              Choose your tag
+            </option>
+            {tagList}
           </select>
         </div>
         <CreateButtonStyled type="submit" className="btn btn-primary">

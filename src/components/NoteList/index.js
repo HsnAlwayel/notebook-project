@@ -14,25 +14,31 @@ import {
   NoteListWrapperWrapper,
   TagsWrapper,
 } from "./styles";
+import tagStore from "../../stores/tagStore";
+import TagItem from "../TagItem";
 
 const NoteList = ({ notes, show }) => {
   const [query, setQuery] = useState("");
 
+  const toggleTags = (tagName) => {
+    setQuery(tagName);
+  };
+
+  const tagList = tagStore.tags.map((tag) => (
+    <TagItem toggleTags={toggleTags} tag={tag} key={tag.id} />
+  ));
+
   const filteredNote = notes.filter((note) =>
-    note.title.toUpperCase().includes(query.toUpperCase())
+    note.Tags[0].name.toUpperCase().includes(query.toUpperCase())
   );
 
   const noteList = filteredNote.map((note) => (
-    <NoteItem show="true" note={note} key={note.id} />
+    <NoteItem show note={note} key={note.id} />
   ));
 
   const noteList2 = filteredNote.map((note) => (
     <NoteItem note={note} key={note.id} />
   ));
-
-  const toggleTags = (tagName) => {
-    setQuery(tagName);
-  };
 
   return show ? (
     <>
@@ -40,10 +46,7 @@ const NoteList = ({ notes, show }) => {
         <Title>
           <NoteLink to="/">Notebooks</NoteLink>
           <h3 onClick={() => toggleTags("")}>notes</h3>
-          <TagsWrapper>
-            <h3 onClick={() => toggleTags("Anas")}>anas</h3>
-            <h3 onClick={() => toggleTags("HassAn")}>HaSSan</h3>
-          </TagsWrapper>
+          <TagsWrapper>{tagList}</TagsWrapper>
         </Title>
       </TitleWrapper>
 

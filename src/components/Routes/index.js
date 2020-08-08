@@ -16,7 +16,7 @@ const Routes = () => {
         <NoteDetail />
       </Route>
       <Route path="/notes">
-        <NoteList show="true" notes={noteStore.notes} />
+        <NoteList show notes={noteStore.notes} />
       </Route>
       <Route path="/:notebookSlug">
         <NotebookDetail />

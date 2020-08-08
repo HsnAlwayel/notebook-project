@@ -34,7 +34,7 @@ export const AddButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 20vw;
-  height: 60vh;
+  height: 62vh;
   text-align: center;
   margin-top: 4vh;
   margin-left: 2vw;

@@ -28,11 +28,13 @@ const NotebookDetail = () => {
 
   if (!notebook) return <Redirect to="/" />;
 
-  let notes = notebook.notes
-    .map((note) => noteStore.getItemById(note.id))
-    .filter((note) => note);
+  let notes = [];
 
-  console.log(notes);
+  if (notebook.notes) {
+    notes = notebook.notes
+      .map((note) => noteStore.getItemById(note.id))
+      .filter((note) => note);
+  }
 
   return (
     <NotebookDetailWrapper>
